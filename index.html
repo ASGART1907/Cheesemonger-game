@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js" integrity="sha512-16esztaSRplJROstbIIdwX3N97V1+pZvV33ABoG1H2OyTttBxEGkTsoIVsiP1iaTtM8b3+hu2kB6pQ4Clr5yug==" crossorigin="anonymous" referrerpolicy="no-referrer"></script> -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.0/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/howler/2.2.3/howler.min.js" integrity="sha512-6+YN/9o9BWrk6wSfGxQGpt3EUK6XeHi6yeHV+TYD2GR0Sj/cggRpXr1BrAQf0as6XslxomMUxXp2vIl+fv0QRA==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet" href="../css/style.css">
+    <title>Document</title>
+</head>
+<body>
+    <div class="rect1"></div>
+    <div class="rect2"></div>
+  
+    <div class="gameContainer">
+        <div class="loadingContainer">
+            <div class="loading"></div>
+        </div>
+
+        <div class="frontScreenContainer">
+            <div class="cheeseScoreContainer">
+                <div class="imgContainer">
+                    <img src="./Assets/Cheeses/cheese1.png" alt="">
+                </div>
+                <div class="score">0</div>
+            </div>
+
+        </div>
+
+        <div class="homeContainer">
+            <div class="upContainer">
+                <h2 class="title">CHEESEMONGER</h2>
+                <div class="items">
+                    <div class="bestscore">
+                        <div class="imgContainer">
+                            <img src="./Assets/DomIcons/crown.png" alt="">
+                        </div>
+                        <span class="bestscoreEl">0</span>
+                    </div>
+              
+                    <div class="homeScore">
+                        <small>SCORE</small>
+                        <span class="homeScoreEl">0</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="centerContainer"></div>
+
+            <div class="bottomContainer">
+                <button class="startGameBtn">Play</button>
+                <div class="items">
+                    <button class="soundEl item" id="test">
+                        <div class="imgContainer">
+                            <img src="./Assets/DomIcons/iconSoundOn.png" alt="">
+                        </div>
+                        <small>Sound</small>
+                    </button>
+                    <button onclick="alert('Tiles are not ready yet!!')" class="tilesEl item">
+                        <div class="imgContainer">
+                             <img src="./Assets/DomIcons/tile.png" alt="">
+                        </div>
+                        <small>Tiles</small>
+                    </button>
+                </div>
+            </div>
+           
+        </div>
+
+        <div class="gameAbout">
+            <div class="keys">
+                <div class="key">
+                    <div>
+                        <h3>LEFT</h3>
+                        <div>a</div>
+                    </div>
+                    <div>
+                        <h3>RIGHT</h3>
+                        <div>d</div>
+                    </div>
+                </div>
+                <div class="space">
+                    <h3>JUMP</h3>
+                    <div>SPACE</div>
+                </div>
+            </div>
+
+            <div class="about">
+                <p>Hey, I advise you not to approach snakes and tiles that are not fully visible. The cheese you collect will earn you new tiles. Let's get started...</p>
+                <button>OKEY</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./js/howler.min.js"></script>
+    <script src="./js/pixi.js"></script>
+    <script src="./js/sounds.js"></script>
+    <script src="./js/sprite.js"></script>
+    <script src="./js/atlases.js"></script>
+    <script src="./js/setup.js"></script>
+    <script src="./js/classes.js"></script>
+    <script src="./js/utils.js"></script>
+    
+</body>
+</html>

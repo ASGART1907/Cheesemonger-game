@@ -1,0 +1,626 @@
+@font-face{
+    font-family: "Textur";
+    src: url("Textur.ttf") format("truetype");
+}
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    min-width: 100vw;
+    min-height: 100vh;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "Textur";
+    background-color: #111;
+    /* background: radial-gradient(orange,orangered); */
+    user-select: none;
+}
+
+
+button{
+    border: none;
+    outline: none;
+}
+/* 
+#canvas{
+    position: absolute;
+    top: 0;
+    left: 0; */
+    /* top: 50%;
+    left: 50%;
+
+    transform: translate(-50%,-50%); */
+    /* z-index: 99;
+    padding: 0;
+    margin: 0; */
+    /* border-radius: 5px; */
+    /* border: 3px solid lime; */
+/* } */
+
+/* .homeContainer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: yellowgreen;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+
+
+.homeContainer .upContainer{
+    width: 100%;
+    height: 20%;
+    background-color: lime;
+}
+
+.homeContainer .centerContainer{
+    position: relative;
+    width: 100%;
+    height: 60%;
+    background-color: red;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeContainer .centerContainer .spriteContainer{
+    width: 142px;
+    height: 228px;
+    background:transparent url(../Assets/Characters/Mouse/runTest.png);
+}
+
+.homeContainer .bottomContainer{
+    width: 100%;
+    background-color: purple;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeContainer .bottomContainer .startGameBtn{
+    width: 80%;
+    height: 80%;
+    background-color: red;
+} */
+
+.homeContainer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    background-color: black;
+    z-index: 2;
+}
+
+.homeContainer::before{
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: blue;
+    right: -100px;
+    bottom: 0;
+    transform: rotate(45deg);
+    transform-origin: bottom;
+    box-shadow: 0 0 50px dodgerblue,
+                inset 0 0 50px skyblue;
+    border: 5px darkblue;
+    border-radius: 50px;
+}
+
+.homeContainer::after{
+    content: "";
+    position: absolute;
+    width: 300px;
+    height: 300px;
+    background-color: darkgreen;
+    left: -300px;
+    top: 0;
+    transform: rotate(45deg);
+    transform-origin: bottom;
+    box-shadow: 0 0 50px lime,
+                inset 0 0 50px lightgreen;
+    border: 5px darkgreen;
+    border-radius: 50px;
+}
+
+.homeContainer .bottomContainer{
+    position: absolute;
+    width: 100%;
+    height: 30%;
+    bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.homeContainer .bottomContainer .startGameBtn{
+    position:relative;
+    background-color: transparent;
+    letter-spacing: 1px;
+    color: lightgreen;
+    font-size: 4rem;
+    top: 0;
+    font-family: "Textur";
+    text-transform: uppercase;
+    cursor: pointer;
+    font-weight: bolder;
+    animation: startBtn 1s linear infinite;
+    text-shadow: 0 0 5px orange,
+                 0 0 15px orange,
+                 0 0 25px orange;
+}
+
+@keyframes startBtn{
+    0%{
+        text-shadow: 0 0 5px orange,
+                 0 0 15px orange;
+    }
+
+    50%{
+        text-shadow: 0 0 5px yellow,
+                 0 0 15px yellow;
+    }
+
+    100%{
+        text-shadow: 0 0 5px orange,
+                 0 0 15px orange;
+    }
+}
+
+.homeContainer .bottomContainer .items{
+    position: relative;
+    width: 100%;
+    height: 100px;
+    bottom: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 100px;
+}
+
+.homeContainer .bottomContainer .items .item{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    border-radius: 5px;
+    background-color: transparent;
+}
+
+.homeContainer .bottomContainer .items .soundEl .imgContainer,
+.homeContainer .bottomContainer .items .tilesEl .imgContainer{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+}
+
+button:active{
+    transform: scale(0.9);
+}
+
+
+.homeContainer .bottomContainer .items .soundEl .imgContainer img,
+.homeContainer .bottomContainer .items .tilesEl .imgContainer img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0 0 5px yellowgreen);
+}
+
+small{
+    color: white;
+    text-transform: uppercase;
+    padding-top: 5px;
+    font-family: "Textur";
+    margin-top: 10px;
+}
+
+.homeContainer .upContainer{
+    position: absolute;
+    width: 100%;
+    height: 45%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.homeContainer .upContainer .title{
+    position: relative;
+    font-size: 3.5rem;
+    color: white;
+    font-weight: bolder;
+    font-weight: 900;
+    text-shadow: 0 0 5px orange,
+    0 0 15px orange,
+    0 0 25px orange;
+}
+
+.homeContainer .upContainer .items{
+    position: relative;
+    width: 100%;
+    height: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+
+.homeContainer .upContainer .items .item{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: darkblue;
+    border-radius: 5px;
+}
+
+.homeContainer .upContainer .items .bestscore{
+    position: relative;
+    width: 70px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+}
+
+
+.homeContainer .upContainer .items .bestscore .imgContainer{
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.homeContainer .upContainer .items .bestscore .imgContainer img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.homeContainer .upContainer .items .bestscore .bestscoreEl{
+    text-align:center;
+    color: white;
+    font-size: 1.4rem;
+    width: 100%;
+    filter: drop-shadow(0 0 20px white);
+}
+
+
+
+
+.homeContainer .upContainer .items .imgContainer img{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+
+.homeContainer .upContainer .items .homeScore{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.homeContainer .upContainer .items .homeScore small{
+    font-size: 1.4rem;
+    background: -webkit-linear-gradient(limegreen, yellow);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  filter: drop-shadow(0 0 10px lime);
+}
+
+
+.homeContainer .upContainer .items .homeScore .homeScoreEl{
+    color: white;
+    font-size: 1.4rem;
+    padding-top: 5px;
+      filter: drop-shadow(0 0 20px white);
+}
+
+.homeContainer .centerContainer{
+    position: absolute;
+    width: 115px;
+    height: 176px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    background-color: red;
+    background: url(../Assets/Characters/Mouse/run.png);
+    animation: run 1s steps(8) infinite;
+}
+
+@keyframes run{
+    0%{
+        background-position: 0 0;
+    }
+
+    100%{
+        background-position: -920px 0;
+    }
+}
+
+/* GAME CONTAİNER */
+
+.gameContainer{
+    position: absolute;
+    width: 600px;
+    height: 90%;
+    /* background-color: black; */
+    box-shadow: -5px -5px 5px rgba(255,255,255,0.06),
+                5px 5px 5px black;
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    background-color: black;
+    border:2px solid rgba(255,255,255,0.1);
+}
+
+.gameContainer canvas{
+
+}
+
+
+.loadingContainer{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    background-color: #111;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 98;
+}
+
+.loadingContainer .loading{
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 4rem;
+    font-weight: bolder;
+    border-radius: 5px;
+}
+
+.loadingContainer .loading::before{
+    content: "";
+    width: 75px;
+    height: 75px;
+    border-radius: 5px;
+    background-color: black;
+    border-right: 30px solid deeppink;
+    animation: loadingAnimate 2s ease-in-out infinite;
+}
+
+@keyframes loadingAnimate{
+    0%{
+        border: none;
+
+        border-right: 30px solid deeppink;
+    }
+    25%{
+        border: none;
+
+        border-bottom: 30px solid limegreen;
+    }
+    50%{
+        border: none;
+
+        border-left: 30px solid dodgerblue;
+    }
+    75%{
+        border: none;
+
+        border-top: 30px solid orangered;
+    }
+    100%{
+        border: none;
+
+        border-right: 30px solid deeppink;
+    }
+}
+
+
+/* ////////////////////////////////////////////////////////// */
+.frontScreenContainer{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+}
+
+.frontScreenContainer .cheeseScoreContainer{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100px;
+    top: 10px;
+    width: auto;
+    left: 10px;
+}
+
+.frontScreenContainer .cheeseScoreContainer .imgContainer{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.frontScreenContainer .cheeseScoreContainer .imgContainer img{
+    position:absolute;
+    width: 100%;
+    height: 100%;
+    filter: drop-shadow(0px 0px 4px orangered);
+}
+
+.frontScreenContainer .cheeseScoreContainer .score{
+    font-size: 1.5rem;
+    font-weight: bolder;
+    color: white;
+    margin-left: 10px;
+}
+
+.fullScreenBtn{
+    position: absolute;
+    color: white;
+    top: 100px;
+    left: 100px;
+    background-color: orange;
+    font-size: 1.3rem;
+}
+
+.rect1{
+    position: absolute;
+    width: 298.5px;
+    height: 298.5px;
+    background-color: darkgreen;
+    top: 76px;
+    left: 150px;
+    transform: rotate(45deg);
+    box-shadow: 0 0 50px lime,
+    inset 0 0 50px lightgreen;
+    border: 5px darkgreen;
+    border-radius: 50px;
+}
+
+.rect2{
+    position: absolute;
+    width: 293px;
+    height: 293px;
+    background-color: blue;
+    right: 250px;
+    bottom: 35px;
+    transform: rotate(45deg);
+    transform-origin: bottom;
+    box-shadow: 0 0 50px dodgerblue,
+                inset 0 0 50px skyblue;
+    border: 5px darkblue;
+    border-radius: 50px;
+}
+
+.gameAbout{
+    position: absolute;
+    width: 300px;
+    height: 98%;
+    background-color: #ffc93c;
+    z-index: 10;
+    padding: 10px;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.gameAbout .keys{
+    position: relative;
+    width: 100%;
+    height: 50%;
+    background-color: black;
+    padding: 10px;
+}
+
+.keys .space{
+    position: absolute;
+    width: 90%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    bottom: 10px;
+}
+
+.keys .space h3{
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+
+.keys .space div{    
+    position: relative;
+    width: 100%;
+    height: 50px;
+    background-color: limegreen;
+    border-radius: 5px;
+    border-bottom: 2px solid lime;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-shadow: 0 0 5px black;
+}
+
+.keys .key{
+    display: flex;
+    gap: 50px;
+    top: -50%;
+    transform: translateY(50%);
+    margin-left: 50px;
+    margin-top: 20px;
+}
+
+.keys .key div h3{
+    font-size: 0.8rem;
+    width: 100%;
+    text-align: center;
+    color: white;
+}
+
+.keys .key div div{
+    position: relative;
+    width: 50px;
+    height: 50px;
+    background-color: limegreen;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    border-bottom: 2px solid lime;
+    color: white;
+    text-shadow: 0 0 5px black;
+}
+
+.gameAbout .about{
+    width: 100%;
+    padding: 10px;
+    background-color: black;
+    color: white;
+}
+
+.gameAbout .about button{
+    position: relative;
+    margin-top: 20px;
+    cursor: pointer;
+    padding: 5px;
+    padding-left: 20px;
+    padding-right: 20px;
+    font-family: "Textur";
+    background-color: yellow;
+    font-weight: bolder;
+    transition:0.10s ease-in-out;
+}
+
+.gameAbout .about button:hover{
+    background-color: lightgreen;
+}
